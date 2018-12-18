@@ -142,17 +142,18 @@ int main()
         cout << "         1 | 2 | 3   " << endl;
         cout << "         4 | 5 | 6   " << endl;
         cout << "         7 | 8 | 9   " << endl;
-        cout << "Enter 1 to play or anything else to quite " << endl;
+        cout << "Enter 1 to play or anything else to quit" << endl;
         cin >> x;
         if (x == 1){
             do{
-                cout << "now it is player 1's turn, which space would you like to play?" << endl;
+                cout << "Now it is player 1's turn, which space would you like to play?" << endl;
                 do{
                 cin >> sp;
                     if(space[sp - 1] == 0){
                         space[sp - 1] = 1;
                         badmove = 0;
                         displayBoard(space);
+
                     }
                     else
                     {
@@ -160,7 +161,10 @@ int main()
                         cout << "invalid move, try again" << endl;
                     }
                 }while(badmove == 1);
-                cout << "now it is player 2's turn, please enter the space you wish to player" << endl;
+                if(winDetetction(space) == 1){
+                            break;
+                        }
+                cout << "now it is player 2's turn, please enter the space you wish to play" << endl;
                 do{
                 cin >> sp;
                     if(space[sp - 1] == 0){

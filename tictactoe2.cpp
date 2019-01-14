@@ -153,7 +153,7 @@ int main()
             
             do{
                 cin >> sp; //in put which space player wants to play
-                if(space[sp - 1] == 0){ //storing input in specific location in space array only if that space is open (open represented by being equal to zero)
+                if(space[sp - 1] == 0 && sp >= 1 && sp <= 9){ //storing input in specific location in space array only if that space is open (open represented by being equal to zero)
                     space[sp - 1] = 1; // 1 means occupied by player 1
                     badmove = 0; // no bad move flag triggered
                     displayBoard(space); // displays which spaces are currently open and which are occupied
@@ -175,7 +175,7 @@ int main()
             do{
                 cin >> sp;
                 
-                if(space[sp - 1] == 0){
+                if(space[sp - 1] == 0 && sp >= 1 && sp <= 9){
                     space[sp - 1] = 2;
                     badmove = 0;
                     displayBoard(space);
